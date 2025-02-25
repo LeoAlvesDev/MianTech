@@ -123,7 +123,7 @@ nav ul li a:hover {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    background-image: url('Assets/bg-preto-1.jpg'); /* Imagem de fundo */
+    background-image: url('./Assets/bg-preto-1.jpg'); /* Imagem de fundo */
     background-size: cover; /* Garante que a imagem cubra todo o elemento */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
