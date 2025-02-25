@@ -157,7 +157,7 @@ nav ul li a:hover {
 
 .hero-subtitle {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
     color: #2c8ac0;
     text-shadow: 0 0 5px #2c8ac0, 0 0 20px #2c8ac0;
     position: relative; /* Garante que o subtítulo fique acima do overlay */
