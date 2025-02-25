@@ -12,6 +12,10 @@ body {
     line-height: 1.6;
 }
 
+#robbu-whatsapp-button{
+    z-index: 99;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
