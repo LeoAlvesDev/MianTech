@@ -9,23 +9,22 @@
 </head>
 <body>
      <!-- BOTÃO DO WHATSAPP -->
-     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
      <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511962646785&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20como%20colocar%20a%20presen%C3%A7a%20digital%20na%20minha%20empresa.">
      <div class="rwb-tooltip">Fale Conosco</div>
-     <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+     <img class="robbu-whatsapp-image" src="Assets/whatsapp2.png">
      
  </a>
     <div id="particles-js"></div> <!-- Fundo de partículas -->
     <header>
         <div class="container">
-            <img src="Assets/logomian.png" class="logo">
+            <img id="imgClick" src="Assets/logomian.png" class="logo">
             <button class="menu-toggle" aria-label="Abrir menu">☰</button>
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -34,6 +33,7 @@
 
     <section id="home" class="hero">
         <div class="container">
+            <img id="logohero" src="Assets/logomian.png">
             <h2 class="hero-title">Transforme sua presença online</h2>            
             <p class="hero-subtitle">Cada detalhe importa! Criamos experiências digitais personalizadas para impressionar e converter.</p>
             <a href="#contact" class="cta-button">Solicitar Orçamento Grátis</a>
@@ -108,7 +108,7 @@
                         <img src="Assets/CEL2bere.png" alt="Projeto 1" class="bottom-image">
                     </div>                    
                     <h3>Sistema de Gestão</h3>
-                    <p>Uma Plataforma de Gestão para Restaurantes automatiza processos como pedidos, estoque e finanças, melhorando a eficiência e a experiência do cliente.</p>
+                    <p>Uma Plataforma de Gestão para Restaurantes automatizando processos como pedidos, estoque e finanças, melhorando a eficiência e a experiência do cliente.</p>
                 </div>
                 <div class="project-card">
                     <div class="image-container">
@@ -141,9 +141,10 @@
         <div class="container">
             <h2 class="section-title-contact">Vamos Conversar?</h2>
             <form id="contact-form">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <textarea placeholder="Sua Mensagem" required></textarea>
+                <input type="text" id="nome" placeholder="Seu Nome" required>
+                <input type="text" id="empresa" placeholder="Empresa" required>
+                <input type="email" id="email" placeholder="Seu E-mail" required>
+                <textarea id="message" placeholder="Sua Mensagem" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
             <!-- Redes Sociais -->
@@ -164,48 +165,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-     <script>
-        // Animação com GSAP
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1, delay: 0.5 });
-gsap.from(".hero-subtitle", { opacity: 0, y: 50, duration: 1, delay: 1 });
-gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
-
-gsap.from(".service-card", {
-    scrollTrigger: ".service-card",
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2
-});
-
-gsap.from(".project-card", {
-    scrollTrigger: ".project-card",
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2
-});
-
-gsap.from(".about-text", {
-    scrollTrigger: ".about-text",
-    opacity: 0,
-    x: -100,
-    duration: 1
-});
-
-gsap.from(".contact form", {
-    scrollTrigger: ".contact form",
-    opacity: 0,
-    y: 50,
-    duration: 1
-});
-     </script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -40,3 +40,39 @@ setInterval(toggleImages, 3000); // Troca a cada 3 segundos
 document.querySelector(".menu-toggle").addEventListener("click", function() {
     document.querySelector("nav").classList.toggle("active");
 });
+
+// Seleciona todos os links dentro do menu
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function() {
+        document.querySelector("nav").classList.remove("active"); // Fecha o menu
+    });
+});
+
+  document.getElementById("imgClick").addEventListener("click", function() {
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  });
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    // Captura os valores digitados pelo usuário
+    const nome = encodeURIComponent(document.getElementById("nome").value);
+    const empresa = encodeURIComponent(document.getElementById("empresa").value);
+    const email = encodeURIComponent(document.getElementById("email").value);
+    const message = encodeURIComponent(document.getElementById("message").value);
+
+    // Número de telefone do WhatsApp (coloque o número desejado)
+    const phoneNumber = "+5511962646785";
+
+    // Monta a mensagem do WhatsApp
+    const whatsappMessage = `Olá, Tudo Bem? meu nome é ${nome}%0A%0A` +                            
+                            `Represento a ${empresa}%0A%0A` +                            
+                            `Meu E-mail é ${email}%0A%0A` +                            
+                            `Mensagem: ${message}`;
+
+    // Gera o link do WhatsApp com a mensagem personalizada
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`;
+
+    // Abre o link em uma nova aba
+    window.open(whatsappLink, '_blank');
+});
