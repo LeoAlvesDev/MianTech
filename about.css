@@ -238,10 +238,11 @@ nav ul li a:hover {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    background-image: url('./Assets/bg-preto-1.jpg'); /* Imagem de fundo */
+    background-image: url('./Assets/bg-branco2.jpg'); /* Imagem de fundo */
     background-size: cover; /* Garante que a imagem cubra todo o elemento */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
+    z-index: -1;
 }
 
 .hero::before {
@@ -251,8 +252,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.548); /* Preto com 50% de opacidade */
-    z-index: 1; /* Overlay acima da imagem de fundo, mas abaixo do conteúdo */
+    background-color: rgba(0, 0, 0, 0.904); /* Preto com 50% de opacidade */
 }
 
 .hero-title {
@@ -262,23 +262,23 @@ nav ul li a:hover {
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff;
-    position: relative; /* Garante que o título fique acima do overlay */
-    z-index: 1; /* Título acima do overlay */
+    position: relative !important; /* Garante que o título fique acima do overlay */
+    z-index: 2 !important; /* Título acima do overlay */
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 80px;
-    color: #2c8ac0;
-    text-shadow: 0 0 5px #2c8ac0, 0 0 20px #2c8ac0;
+    color: #ffffffbe;
+    text-shadow: 0 0 2px #000000be, 0 0 15px #000000be;
     position: relative; /* Garante que o subtítulo fique acima do overlay */
-    z-index: 2; /* Subtítulo acima do overlay */
+    z-index: 2 !important; /* Subtítulo acima do overlay */
 }
 
 #logohero {
     width: 35%;    
     position: relative;
-    z-index: 2;
+    z-index: 2 !important;
 }
 
 .cta-button {
@@ -311,7 +311,10 @@ nav ul li a:hover {
 @media screen and (min-width: 1024px) {
     .services {
         padding: 10% 0;
-        background: #111; 
+        background-image: url('./Assets/backgroundcards2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;         
         height: 100vh;   
     }
 }
@@ -321,8 +324,8 @@ nav ul li a:hover {
     font-size: 36px;
     text-align: center;
     margin-bottom: 40px;
-    color: #87ceeb; /* Azul clarinho */
-    text-shadow: 0 0 5px #87ceeb, 0 0 10px #87ceeb;
+    color: #ffffff; /* Azul clarinho */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
 .service-grid {
@@ -332,7 +335,12 @@ nav ul li a:hover {
 }
 
 .service-card {
-    background: #1a1a1a;    
+    background-image: url('./Assets/bg-CEO2.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-color:  rgba(0, 0, 0, 0.479); /* Fundo preto com 50% de transparência */
+    background-blend-mode: multiply; /* Mistura a cor de fundo com a imagem */       
     padding: 80px;
     border-radius: 10px;
     text-align: center;
@@ -341,14 +349,19 @@ nav ul li a:hover {
 
 @media screen and (min-width: 1024px) {
     .service-card {
-        background: #1a1a1a;        
-        height: 50vh;
-        border-radius: 10px;
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    background-image: url('./Assets/bg-CEO2.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-color:  rgba(0, 0, 0, 0.479); /* Fundo preto com 50% de transparência */
+    background-blend-mode: multiply; /* Mistura a cor de fundo com a imagem */
+    height: 50vh;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;        
+    }   /* Pseudo-elemento para o fundo desfocado */
 }
 
 
@@ -357,13 +370,13 @@ nav ul li a:hover {
     box-shadow: 0 0 20px rgba(135, 206, 235, 0.5); /* Azul clarinho */
 }
 
-.card-icon svg {
-    width: 50px;
-    height: 50px;
+.card-icon img {
+    width: 60%;
+    height: 50%;
     fill: none;
     stroke: #87ceeb; /* Azul clarinho */
     stroke-width: 2;
-    margin-bottom: 10px;
+    margin: 5px;    
 }
 
 .service-features {
@@ -378,85 +391,55 @@ nav ul li a:hover {
     text-shadow: 0 0 5px #ccc, 0 0 10px #ccc;
 }
 
-/* Projects Section */
-.projects {
-    padding: 80px 0;
-    background: #000000;
-    height: 100%;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.project-card {
-    background-image: url('./Assets/bg-preto-1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;    
-    background-color: rgb(0, 17, 255); /* Cor de fundo semi-transparente */
-    background-blend-mode: darken; /* Mistura a cor com a imagem */
-    padding: 100px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Garante que as imagens sejam posicionadas relativas ao card */
-}
-
-.image-container {
-    position: relative;
-    width: 120%;
-    height: 200px; /* Ajuste conforme necessário */
-    margin-bottom: 15px;
-    /*verflow: hidden; /* Garante que as imagens não ultrapassem o container */
-}
-
-.top-image, .bottom-image {
-    position: absolute;
-    top: -10%;
-    left: 40%;
-    transform: translateX(-50%);
-    width: 100%; /* Ajuste o tamanho das imagens conforme necessário */
-    height: auto;
-    opacity: 1; /* Inicia totalmente visível */
-    transition: opacity 2s ease; /* Transição suave para opacidade */
-}
-
-.bottom-image {
-    z-index: 1; /* Imagem de fundo */
-}
-
-.top-image {
-    z-index: 2; /* Imagem da frente */
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.5); /* Azul neon */
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.project-card h3 {
-    color: #87ceeb; /* Azul clarinho */
+.service-card p {
     margin-bottom: 10px;
-    text-shadow: 0 0 3px #87ceeb, 0 0 10px #87ceeb;
-
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff;
 }
 
-.project-card p {
-    color: #ccc;
-    text-shadow: 0 0 5px #ccc, 0 0 20px #ccc;
-
+.service-card h3 {    
+    font-size: 18px;
+    color: #ff0000;
+    text-shadow: 0 0 2px #ff0000, 0 0 5px #ff0000;
+}
+@media screen and (max-width: 768px) {
+    .services {
+        padding: 10% 0;
+        background-image: url('./Assets/backgroundcards2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;    
+        height: 100%;   
+    }
+    .service-card p {
+        font-size: 20px !important;
+    }
+}
+.service-card {
+    animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
 }
 
-/* About Section */
+.service-card:hover {
+    transform: scale(1.05) rotateY(15deg) rotateX(10deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(135, 206, 235, 0.5), 0 0 10px rgba(135, 206, 235, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(135, 206, 235, 0.8), 0 0 30px rgba(135, 206, 235, 0.8);
+    }
+}
+
+.service-card {
+    animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* SOBRE */
 
 /* Media Query para dispositivos móveis */
 @media screen and (max-width: 768px) {
@@ -474,6 +457,8 @@ nav ul li a:hover {
     }
 }
 
+
+
 @media screen and (min-width: 1024px) {
     .about{
         height: 100%;
@@ -482,14 +467,14 @@ nav ul li a:hover {
 .about {
     padding: 200px 0;    
     text-align: center;
-    background-image: url('./Assets/bg-branco.jpg'); /* Imagem de fundo */
+    background-image: url('./Assets/bg-CEO2.jpg'); /* Imagem de fundo */
     background-size: cover; /* Garante que a imagem cubra todo o elemento */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
-
-    background-color: rgba(0, 0, 0, 0.171); /* Fundo preto com 50% de transparência */
+    background-color:  rgba(0, 0, 0, 0.479); /* Fundo preto com 50% de transparência */
     background-blend-mode: multiply; /* Mistura a cor de fundo com a imagem */
-
+    z-index: 2;
+    position: relative;
 }
 
 .section-title-about {
@@ -497,8 +482,8 @@ nav ul li a:hover {
     font-size: 56px;
     text-align: center;
     margin-bottom: 40px;
-    color: #000000; /* Azul clarinho */
-    text-shadow: 0 0 5px #000000, 0 0 10px #ffffff;
+    color: #dde0e6; /* Azul clarinho */
+    text-shadow: 0 0 30px #dde0e6, 0 0 25px #dde0e6;
 }
 
 .container {
@@ -518,10 +503,9 @@ nav ul li a:hover {
 .about-text {
     flex: 1; /* Ocupa metade do espaço disponível */
     text-align: justify; /* Alinha o texto à esquerda */
-    color: #000000;
+    color: #dde0e6; /* Azul clarinho */
     font-size: 3vh;
-    text-shadow: 0 0 5px #000000, 0 0 10px #ffffff;
-    padding-bottom: 50px;
+    text-shadow: 0 0 15px #dde0e6, 0 0 25px #dde0e6;
 }
 
 .about-image {
@@ -533,77 +517,27 @@ nav ul li a:hover {
     height: auto;
     width: auto;
     border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
-    margin-left: 4vh;
+    margin-left: -40%;
+    transform: scaleX(-1);
+    border-radius: 120px;
+    z-index: 9;
 }
 
-
-.glow-on-hover {
-    display: flex;
-    width: 220px;
-    height: 50px;
-    border: none;    
-    color: #ffffff;
-    justify-content: center;
-    text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    border-radius: 10px;
-    align-items: center;    
-    text-decoration: none;
-    margin-left: 18%;
-    margin-top: 1%;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 1; /* Alterado para 1 (efeito sempre visível) */
-    border-radius: 10px;
-}
-
-.glow-on-hover:active {
-    color: #000;
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
 @media screen and (max-width: 768px) {
     .about-image img {
         max-width: 100%; /* Garante que a imagem não ultrapasse o container */
         height: auto;
-        border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
+        border-radius: 100px; /* Adiciona bordas arredondadas à imagem */
         margin-left: 0% !important;
     }
+    .about-text {
+        flex: 1; /* Ocupa metade do espaço disponível */
+        text-align: justify; /* Alinha o texto à esquerda */
+        color: #dde0e6; /* Azul clarinho */
+        font-size: 2vh;
+        text-shadow: 0 0 15px #dde0e6, 0 0 25px #dde0e6;
+    }
+    
     
 }
 
@@ -612,7 +546,7 @@ nav ul li a:hover {
     padding: 25vh 0;
     text-align: center;
     height: 100%;
-    background-image: url('./Assets/backgroundcards.webp'); /* Imagem de fundo */
+    background-image: url('./Assets/bg-branco2.jpg'); /* Imagem de fundo */
     background-size: cover; /* Garante que a imagem cubra todo o elemento */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
@@ -627,6 +561,8 @@ nav ul li a:hover {
     margin-bottom: 40px;
     color: #ffffff; /* Azul clarinho */
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    z-index: 2;
+    position: relative;
 
 }
 .contact form {
