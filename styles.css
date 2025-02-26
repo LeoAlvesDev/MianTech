@@ -344,6 +344,8 @@ nav ul li a:hover {
         background: #1a1a1a;        
         height: 50vh;
         border-radius: 10px;
+        position: relative;
+        z-index: 2;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -519,6 +521,7 @@ nav ul li a:hover {
     color: #000000;
     font-size: 3vh;
     text-shadow: 0 0 5px #000000, 0 0 10px #ffffff;
+    padding-bottom: 50px;
 }
 
 .about-image {
@@ -533,6 +536,67 @@ nav ul li a:hover {
     margin-left: 4vh;
 }
 
+
+.glow-on-hover {
+    display: flex;
+    width: 220px;
+    height: 50px;
+    border: none;    
+    color: #ffffff;
+    justify-content: center;
+    text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+    align-items: center;    
+    text-decoration: none;
+    margin-left: 18%;
+    margin-top: 1%;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 1; /* Alterado para 1 (efeito sempre visível) */
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 @media screen and (max-width: 768px) {
     .about-image img {
         max-width: 100%; /* Garante que a imagem não ultrapasse o container */
